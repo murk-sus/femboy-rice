@@ -1,0 +1,58 @@
+{
+ "palette": {
+  "H": [
+   255,
+   70,
+   0
+  ],
+  "C": [
+   255,
+   0,
+   0
+  ],
+  "S": [
+   255,
+   160,
+   110
+  ],
+  "E": [
+   0,
+   80,
+   255
+  ],
+  "R": [
+   255,
+   0,
+   12
+  ],
+  "G": [
+   0,
+   255,
+   40
+  ],
+  "O": [
+   255,
+   110,
+   0
+  ],
+  "D": [
+   40,
+   0,
+   2
+  ],
+  "K": [
+   0,
+   0,
+   0
+  ]
+ },
+ "rows": [
+  "OOKKOOKKDRRRRRRRRRRRHOO",
+  "OKKOOKKODRRRRRRRRRRHOOO",
+  "KKOOKKOODGGGGGGGRRHOOOO",
+  "KOOKKOOKDGGGGGGGRHOOOOO",
+  "OOKKOOKKDRRRRRRRHOOOOOO",
+  "OKKOOKKODRRRRRRROOOOOOO"
+ ],
+ "bg": "D"
+}

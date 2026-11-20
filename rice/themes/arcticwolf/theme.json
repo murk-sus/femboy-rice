@@ -1,0 +1,45 @@
+{
+  "id": "arcticwolf",
+  "name": "Arctic Wolf",
+  "description": "Полярный волк-дух: лёд, лаванда и серебро, тихий снег и северное сияние.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyArcticwolf",
+  "cursor": "Femboy-Arcticwolf",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-arcticwolf",
+  "splash": "femboy.arcticwolf",
+  "konsole_profile": "Femboy Arcticwolf.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#b9c8ff",
+  "accent2": "#d7a8ff",
+  "bg": "#0b0e18",
+  "system": {
+    "sddm": "femboy-arcticwolf",
+    "grub": "Femboy-Arcticwolf",
+    "plymouth": "arcticwolf-log",
+    "refind": "femboy-arcticwolf",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/arcticwolf/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/arcticwolf/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/arcticwolf/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/arcticwolf/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/arcticwolf/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/arcticwolf/kickoff.png"
+}

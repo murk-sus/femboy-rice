@@ -1,0 +1,45 @@
+{
+  "id": "laundry",
+  "name": "Laundry Day",
+  "description": "Прачечная выходного дня: пастель, мятный, мыльные пузыри и Astolfo на фоне.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyLaundry",
+  "cursor": "Femboy-Laundry",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-laundry",
+  "splash": "femboy.laundry",
+  "konsole_profile": "Femboy Laundry.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#8fe3d0",
+  "accent2": "#ffa8cf",
+  "bg": "#0b1214",
+  "system": {
+    "sddm": "femboy-laundry",
+    "grub": "Femboy-Laundry",
+    "plymouth": "laundry-log",
+    "refind": "femboy-laundry",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/laundry/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/laundry/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/laundry/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/laundry/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/laundry/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/laundry/kickoff.png"
+}

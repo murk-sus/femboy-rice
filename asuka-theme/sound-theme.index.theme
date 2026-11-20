@@ -1,0 +1,8 @@
+[Sound Theme]
+Name=NERV // Asuka
+Comment=Asuka voice lines + NERV / MAGI signals
+Inherits=ocean,freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

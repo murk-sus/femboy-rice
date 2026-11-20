@@ -1,0 +1,45 @@
+{
+  "id": "synthwave",
+  "name": "Synthwave Boy",
+  "description": "Ретровейв-80-е: закатное солнце, сетка, маджента и циан, всё на VHS-драйве.",
+  "preview": "preview.png",
+  "colorscheme": "FemboySynthwave",
+  "cursor": "Femboy-Synthwave",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-synthwave",
+  "splash": "femboy.synthwave",
+  "konsole_profile": "Femboy Synthwave.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff4fd8",
+  "accent2": "#4ff0ff",
+  "bg": "#0c0718",
+  "system": {
+    "sddm": "femboy-synthwave",
+    "grub": "Femboy-Synthwave",
+    "plymouth": "synthwave-log",
+    "refind": "femboy-synthwave",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/synthwave/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/synthwave/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/synthwave/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/synthwave/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/synthwave/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/synthwave/kickoff.png"
+}

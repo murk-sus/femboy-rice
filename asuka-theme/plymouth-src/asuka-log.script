@@ -1,0 +1,214 @@
+#  asuka-log.script — NERV // MAGI boot log for Plymouth
+#  Вместо полоски загрузки: живые имена юнитов systemd в терминале MAGI.
+#  Координаты окна/полосы совпадают с plymouth-src/build_log.py.
+
+# ─── Экран ───────────────────────────────────────────────────────────────────
+sw = Window.GetWidth();  sh = Window.GetHeight();
+ox = Window.GetX();      oy = Window.GetY();
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+bg_sprite = Sprite(Image("background.png").Scale(sw, sh));
+bg_sprite.SetPosition(ox, oy, -100);
+
+mode = Plymouth.GetMode();
+if (mode == "shutdown")    sub_img = Image("sub-shutdown.png");
+else if (mode == "reboot") sub_img = Image("sub-reboot.png");
+else                       sub_img = Image("sub-boot.png");
+k = sh / 1440;
+sub_sprite = Sprite(sub_img.Scale(sub_img.GetWidth() * k, sub_img.GetHeight() * k));
+sub_sprite.SetPosition(ox + sw * 0.055, oy + sh * 0.163, 5);
+
+# ─── Окно логов ──────────────────────────────────────────────────────────────
+fsize = Math.Int(sh / 62);
+if (fsize < 12) fsize = 12;
+fnt = "Share Tech Mono " + fsize;
+lh = Math.Int(fsize * 1.42);
+log_x = ox + sw * 0.055 + fsize;
+log_y = oy + sh * 0.255 + fsize * 0.8;
+nlines = Math.Int((sh * (0.865 - 0.255) - fsize * 1.6) / lh);
+
+col_time = Image.Text("T+000.00 ", 1, 1, 1, 1, fnt).GetWidth();
+col_tag  = Image.Text("[  OK  ] ", 1, 1, 1, 1, fnt).GetWidth();
+col_magi = Image.Text("BALTHASAR-2 ", 1, 1, 1, 1, fnt).GetWidth();
+# сколько символов влезает в строку до правой рамки
+chw = col_time / 9;
+maxc = Math.Int((sw * (0.545 - 0.055) - fsize * 2 - col_time - col_tag - col_magi) / chw) - 1;
+
+for (i = 0; i < nlines; i++) {
+    t_spr[i] = Sprite(); g_spr[i] = Sprite(); m_spr[i] = Sprite(); x_spr[i] = Sprite();
+    y = log_y + i * lh;
+    t_spr[i].SetPosition(log_x, y, 10);
+    g_spr[i].SetPosition(log_x + col_time, y, 10);
+    m_spr[i].SetPosition(log_x + col_time + col_tag, y, 10);
+    x_spr[i].SetPosition(log_x + col_time + col_tag + col_magi, y, 10);
+}
+used = 0;
+cursor = Sprite(Image.Text("_", 1, 0.42, 0.07, 1, fnt));
+cursor.SetPosition(log_x, log_y, 11);
+
+ticks = 0;          # SetRefreshFunction ~50 Гц
+last_event = 0;
+events = 0;
+amb_i = 0;
+
+fun pad2(n) { if (n < 10) return "0" + n; return "" + n; }
+fun pad3(n) { if (n < 10) return "00" + n; if (n < 100) return "0" + n; return "" + n; }
+
+fun stamp() {
+    s = Math.Int(global.ticks / 50);
+    cs = Math.Int(global.ticks * 2) - s * 100;
+    return "T+" + pad3(s) + "." + pad2(cs);
+}
+
+fun magi_name(n) {
+    r = n - Math.Int(n / 3) * 3;
+    if (r == 0) return "MELCHIOR-1";
+    if (r == 1) return "BALTHASAR-2";
+    return "CASPER-3";
+}
+
+# kind: 0 = OK (зелёный), 1 = MAGI (оранжевый), 2 = WARN (красный)
+fun push_line(text, kind) {
+    tm = Image.Text(stamp() + " ", 0.59, 0.43, 0.39, 1, global.fnt);
+    if (kind == 0)      tg = Image.Text("[  OK  ]", 0, 0.9, 0.46, 1, global.fnt);
+    else if (kind == 1) tg = Image.Text("[ MAGI ]", 1, 0.42, 0.07, 1, global.fnt);
+    else                tg = Image.Text("[ WARN ]", 0.86, 0.15, 0.19, 1, global.fnt);
+    mg = Image.Text(magi_name(global.events), 0.86, 0.15, 0.19, 1, global.fnt);
+    if (text.Length() > global.maxc) text = text.SubString(0, global.maxc - 1) + "~";
+    tx = Image.Text(text, 1, 0.6, 0.35, 1, global.fnt);
+
+    if (global.used < global.nlines) {
+        idx = global.used;
+        global.used = global.used + 1;
+    } else {
+        for (j = 0; j < global.nlines - 1; j++) {
+            global.t_img[j] = global.t_img[j + 1]; global.g_img[j] = global.g_img[j + 1];
+            global.m_img[j] = global.m_img[j + 1]; global.x_img[j] = global.x_img[j + 1];
+        }
+        idx = global.nlines - 1;
+    }
+    global.t_img[idx] = tm; global.g_img[idx] = tg; global.m_img[idx] = mg; global.x_img[idx] = tx;
+
+    for (j = 0; j < global.used; j++) {
+        global.t_spr[j].SetImage(global.t_img[j]); global.g_spr[j].SetImage(global.g_img[j]);
+        global.m_spr[j].SetImage(global.m_img[j]); global.x_spr[j].SetImage(global.x_img[j]);
+        # старые строки тускнеют, свежая — самая яркая
+        op = 0.3 + 0.7 * (j + 1 + global.nlines - global.used) / global.nlines;
+        global.t_spr[j].SetOpacity(op); global.g_spr[j].SetOpacity(op);
+        global.m_spr[j].SetOpacity(op); global.x_spr[j].SetOpacity(op);
+    }
+    cy = global.log_y + global.used * global.lh;
+    if (global.used >= global.nlines) cy = global.log_y + (global.nlines - 1) * global.lh;
+    global.cursor.SetY(cy);
+    global.cursor.SetX(global.log_x + global.col_time + global.col_tag + global.col_magi + tx.GetWidth() + 4);
+    if (global.used >= global.nlines) global.cursor.SetX(global.log_x);
+    global.events = global.events + 1;
+    global.last_event = global.ticks;
+}
+
+# ─── Атмосферные строки MAGI, пока systemd молчит ────────────────────────────
+amb[0]  = "NERV boot sequence initiated";
+amb[1]  = "Entry plug inserted // LCL filling";
+amb[2]  = "A10 nerve connection ..... established";
+amb[3]  = "Pilot: Soryu Asuka Langley // Second Child";
+amb[4]  = "Pattern blue ..... negative";
+amb[5]  = "Harmonics: all within tolerance";
+amb[6]  = "Umbilical cable ..... connected";
+amb[7]  = "AT field ..... stable";
+amb[8]  = "Anta baka?! Hurry up already!";
+amb[9]  = "MAGI vote: 3/3 approve // continue";
+amb[10] = "Mir ist langweilig... schneller!";
+amb[11] = "Synchronization graph ..... nominal";
+namb = 12;
+
+fun ambient() {
+    if (global.amb_i < global.namb) {
+        push_line(global.amb[global.amb_i], 1);
+        global.amb_i = global.amb_i + 1;
+    }
+}
+
+# первые четыре — сразу при старте
+if (mode == "boot") { ambient(); ambient(); ambient(); ambient(); }
+else push_line("EVA-02 // activity stop requested", 2);
+
+# ─── Полоса синхронизации ────────────────────────────────────────────────────
+seg_red = Image("seg-red.png"); seg_org = Image("seg-orange.png"); seg_grn = Image("seg-green.png");
+segw = sw * 0.0125; segh = sh * 0.024;
+for (i = 0; i < 20; i++) {
+    seg_spr[i] = Sprite();
+    seg_spr[i].SetPosition(ox + sw * (0.175 + i * 0.016) + 2, oy + sh * 0.905 + 2, 10);
+}
+pct_spr = Sprite();
+pct_spr.SetPosition(ox + sw * (0.175 + 20 * 0.016) + fsize, oy + sh * 0.905 - fsize * 0.15, 10);
+shown_segs = -1;
+shown_pct = -1;
+
+fun set_sync(p) {
+    n = Math.Int(p * 20 + 0.5);
+    if (n > 20) n = 20;
+    if (n != global.shown_segs) {
+        for (i = 0; i < 20; i++) {
+            if (i < n) {
+                if (n == 20)     im = global.seg_grn;
+                else if (i < 12) im = global.seg_red;
+                else             im = global.seg_org;
+                global.seg_spr[i].SetImage(im.Scale(global.segw - 3, global.segh - 3));
+                global.seg_spr[i].SetOpacity(1);
+            } else global.seg_spr[i].SetOpacity(0);
+        }
+        global.shown_segs = n;
+    }
+    pc = Math.Int(p * 1000);
+    if (pc != global.shown_pct) {
+        whole = Math.Int(pc / 10);
+        global.pct_spr.SetImage(Image.Text(pad3(whole) + "." + (pc - whole * 10) + " %", 1, 0.42, 0.07, 1,
+                                           "Share Tech Mono " + Math.Int(global.fsize * 1.5)));
+        global.shown_pct = pc;
+    }
+}
+set_sync(0);
+
+fun boot_progress_cb(duration, progress) { set_sync(progress); }
+Plymouth.SetBootProgressFunction(boot_progress_cb);
+
+# ─── Логи systemd ────────────────────────────────────────────────────────────
+fun update_status_cb(status) { push_line(status, 0); }
+Plymouth.SetUpdateStatusFunction(update_status_cb);
+
+fun message_cb(text) { push_line(text, 2); }
+Plymouth.SetDisplayMessageFunction(message_cb);
+
+# ─── Тик: мигающий курсор + ambient при тишине ───────────────────────────────
+fun refresh_cb() {
+    global.ticks = global.ticks + 1;
+    b = Math.Int(global.ticks / 20);
+    if (b - Math.Int(b / 2) * 2 == 0) global.cursor.SetOpacity(1);
+    else global.cursor.SetOpacity(0);
+    if (global.mode == "boot" && global.ticks - global.last_event > 45) ambient();
+}
+Plymouth.SetRefreshFunction(refresh_cb);
+
+# ─── Пароль (на случай шифрованного диска) ───────────────────────────────────
+ask_img = Image("ask-pass.png");
+ask_spr = Sprite(ask_img.Scale(ask_img.GetWidth() * k, ask_img.GetHeight() * k));
+ask_spr.SetPosition(ox + sw * 0.055, oy + sh * 0.79, 50);
+ask_spr.SetOpacity(0);
+bul_spr = Sprite();
+bul_spr.SetPosition(ox + sw * 0.055 + ask_img.GetWidth() * k + fsize, oy + sh * 0.79 + fsize * 0.4, 50);
+
+fun password_cb(prompt, bullets) {
+    global.ask_spr.SetOpacity(1);
+    s = "";
+    for (i = 0; i < bullets; i++) s = s + "*";
+    global.bul_spr.SetImage(Image.Text(s + "_", 1, 0.42, 0.07, 1, global.fnt));
+    global.bul_spr.SetOpacity(1);
+}
+Plymouth.SetDisplayPasswordFunction(password_cb);
+
+fun normal_cb() { global.ask_spr.SetOpacity(0); global.bul_spr.SetOpacity(0); }
+Plymouth.SetDisplayNormalFunction(normal_cb);
+
+fun quit_cb() { set_sync(1); }
+Plymouth.SetQuitFunction(quit_cb);

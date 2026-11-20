@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# rclaude — Claude Code в стиле активной темы райса.
+#   rclaude [аргументы claude]        новое окно Konsole с профилем темы
+#   rclaude --here [аргументы]        в текущем терминале
+MOD=/home/femboychik/.claude/dev-mods/e80da6a2-3da3-4d7d-8479-e6c0637f6604/rice-mood
+R=$HOME/.local/share/rice
+run_here() {
+  clear
+  RICE_GREETED=1 fastfetch 2>/dev/null
+  sleep 1.2
+  exec claude --plugin-dir "$MOD" "$@"
+}
+if [[ ${1:-} == --here ]]; then shift; run_here "$@"; fi
+if [[ ${1:-} == --inner ]]; then shift; run_here "$@"; fi
+PROF=$(python3 -c 'import json,sys; p=json.load(open(sys.argv[1]))["konsole_profile"]; print(p[:-8] if p.endswith(".profile") else p)' "$R/current/theme.json" 2>/dev/null)
+exec konsole ${PROF:+--profile "$PROF"} --workdir "$PWD" -e "$0" --inner "$@"

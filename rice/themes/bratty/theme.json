@@ -1,0 +1,45 @@
+{
+  "id": "bratty",
+  "name": "Femboy Paws // Bratty",
+  "description": "Дерзкая неоновая версия: чокеры, гольфы, сарказм и сердечки. Требует headpats для загрузки.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyBratty",
+  "cursor": "Femboy-Bratty",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-bratty",
+  "splash": "femboy.bratty",
+  "konsole_profile": "Femboy Bratty.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff3fa4",
+  "accent2": "#6fe3ff",
+  "bg": "#0d0612",
+  "system": {
+    "sddm": "femboy-bratty",
+    "grub": "Femboy-Bratty",
+    "plymouth": "bratty-log",
+    "refind": "femboy-bratty",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/bratty/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/bratty/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/bratty/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/bratty/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/bratty/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/bratty/kickoff.png"
+}

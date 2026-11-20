@@ -1,0 +1,13 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel/Splash",
+    "KPlugin": {
+        "Authors": [ { "Name": "femboychik" } ],
+        "Category": "",
+        "Description": "NERV // Asuka splash screen",
+        "Id": "nerv.asuka",
+        "License": "GPLv3",
+        "Name": "NERV // Asuka"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Splash;",
+    "X-Plasma-APIVersion": "2"
+}

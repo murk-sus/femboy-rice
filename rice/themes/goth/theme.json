@@ -1,0 +1,45 @@
+{
+  "id": "goth",
+  "name": "Goth Boy",
+  "description": "Готик-фембой: чёрное, белое и кроваво-красный, кружево, свечи и драматизм.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyGoth",
+  "cursor": "Femboy-Goth",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-goth",
+  "splash": "femboy.goth",
+  "konsole_profile": "Femboy Goth.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff3b5c",
+  "accent2": "#e8e8f0",
+  "bg": "#08060a",
+  "system": {
+    "sddm": "femboy-goth",
+    "grub": "Femboy-Goth",
+    "plymouth": "goth-log",
+    "refind": "femboy-goth",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/goth/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/goth/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/goth/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/goth/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/goth/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/goth/kickoff.png"
+}

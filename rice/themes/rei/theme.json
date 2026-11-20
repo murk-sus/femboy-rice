@@ -1,0 +1,44 @@
+{
+  "id": "rei",
+  "name": "Rei // 1995",
+  "description": "Аянами Рей в духе аниме 90-х: VHS-кассета, ЭЛТ-сканлайны, ледяной голубой и красный, логи «с плёнки».",
+  "preview": "preview.png",
+  "colorscheme": "Rei1995",
+  "cursor": "Rei-1995",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "rei-1995",
+  "splash": "rei.1995",
+  "konsole_profile": "Rei 1995.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#9cc8ff",
+  "accent2": "#e03a3e",
+  "bg": "#0a1018",
+  "system": {
+    "sddm": "rei-1995",
+    "grub": "Rei-1995",
+    "plymouth": "rei-log",
+    "refind": "rei-1995",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/rei/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/rei/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/rei/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "image",
+    "path": "/home/femboychik/.local/share/rice/themes/rei/wallpapers/lock.png"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/rei/kickoff.png"
+}

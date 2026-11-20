@@ -1,0 +1,56 @@
+// ╔═══════════════════════════════════════════════╗
+// ║  NERV // MAGI SYSTEM — PILOT DATA: EVA-02      ║
+// ║  惣流・アスカ・ラングレー                        ║
+// ╚═══════════════════════════════════════════════╝
+// original config: ~/asuka-backup-20261113-0324/fastfetch-config.jsonc.orig
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.local/share/asuka-theme/img/fastfetch_asuka.png",
+        "type": "kitty",
+        "height": 16,
+        "padding": { "top": 1, "right": 3 }
+    },
+    "display": {
+        "separator": "  ",
+        "color": { "keys": "91", "title": "33" }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "{#1;91}▌NERV{#0;33}  人工進化研究所 // MAGI SYSTEM ONLINE"
+        },
+        {
+            "type": "custom",
+            "format": "{#33}─────────────────────────────────────────"
+        },
+        { "type": "custom", "format": "{#91}PILOT     {#97}惣流・アスカ・ラングレー  {#90}(Second Child)" },
+        { "type": "custom", "format": "{#91}UNIT      {#97}EVA-02 {#90}// Production Model" },
+        { "type": "title",    "key": "OPERATOR " },
+        { "type": "os",       "key": "OS       " },
+        { "type": "kernel",   "key": "KERNEL   " },
+        { "type": "packages", "key": "PACKAGES " },
+        { "type": "shell",    "key": "SHELL    " },
+        { "type": "terminal", "key": "TERMINAL " },
+        { "type": "wm",       "key": "WM       " },
+        { "type": "cpu",      "key": "MELCHIOR " },
+        { "type": "gpu",      "key": "BALTHASAR" },
+        { "type": "memory",   "key": "CASPER   " },
+        { "type": "uptime",   "key": "SYNC TIME" },
+        { "type": "player",   "key": "MUSIC    " },
+        { "type": "media",    "key": "TRACK    " },
+        {
+            "type": "custom",
+            "format": "{#33}─────────────────────────────────────────"
+        },
+        {
+            "type": "command",
+            "key": "ASUKA    ",
+            "keyColor": "91",
+            "text": "shuf -n1 ~/.local/share/asuka-theme/quotes.txt"
+        },
+        "break",
+        { "type": "colors", "symbol": "block" }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "nightfox",
+  "name": "Night Fox",
+  "description": "Рыжий лис в сумеречном розовом лесу: коралл, сирень и фонарики.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyNightfox",
+  "cursor": "Femboy-Nightfox",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-nightfox",
+  "splash": "femboy.nightfox",
+  "konsole_profile": "Femboy Nightfox.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff7a6b",
+  "accent2": "#d39aff",
+  "bg": "#140b10",
+  "system": {
+    "sddm": "femboy-nightfox",
+    "grub": "Femboy-Nightfox",
+    "plymouth": "nightfox-log",
+    "refind": "femboy-nightfox",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/nightfox/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/nightfox/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/nightfox/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/nightfox/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/nightfox/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/nightfox/kickoff.png"
+}

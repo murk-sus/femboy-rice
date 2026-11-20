@@ -1,0 +1,88 @@
+// Cozy Lamp — fastfetch (rice)
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/femboychik/.local/share/rice/themes/cozylamp/fastfetch-logo.png",
+    "type": "kitty",
+    "height": 16,
+    "padding": {
+      "top": 1,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "95",
+      "title": "94"
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "{#1;95}  {#0;94}cozy lamp {#90}// {#95}3 a.m. vibes"
+    },
+    {
+      "type": "custom",
+      "format": "{#35}─────────────────────────────────────────"
+    },
+    {
+      "type": "custom",
+      "format": "{#95}MOOD      {#97}sleepy, comfy, lo-fi"
+    },
+    {
+      "type": "custom",
+      "format": "{#95}OUTFIT    {#97}oversized hoodie . striped socks . blanket cape"
+    },
+    {
+      "type": "title",
+      "key": "USER     "
+    },
+    {
+      "type": "os",
+      "key": "OS       "
+    },
+    {
+      "type": "kernel",
+      "key": "KERNEL   "
+    },
+    {
+      "type": "packages",
+      "key": "PACKAGES "
+    },
+    {
+      "type": "shell",
+      "key": "SHELL    "
+    },
+    {
+      "type": "terminal",
+      "key": "TERMINAL "
+    },
+    {
+      "type": "wm",
+      "key": "WM       "
+    },
+    {
+      "type": "cpu",
+      "key": "BRAIN    "
+    },
+    {
+      "type": "gpu",
+      "key": "SPARKLE  "
+    },
+    {
+      "type": "memory",
+      "key": "SNACKS   "
+    },
+    {
+      "type": "uptime",
+      "key": "BEING CUTE"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "femboy",
+  "name": "Femboy Paws // Dark",
+  "description": "Тёмная пастельная фурри-тема: розовый, лаванда и голубой, лапки, uwu-логи при загрузке.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyPaws",
+  "cursor": "Femboy-Paws",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-paws",
+  "splash": "femboy.paws",
+  "konsole_profile": "Femboy Paws.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff7ac6",
+  "accent2": "#7fd4ff",
+  "bg": "#0f0a14",
+  "system": {
+    "sddm": "femboy-paws",
+    "grub": "Femboy-Paws",
+    "plymouth": "femboy-log",
+    "refind": "femboy-paws",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/femboy/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/femboy/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/femboy/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/femboy/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/femboy/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/femboy/kickoff.png"
+}

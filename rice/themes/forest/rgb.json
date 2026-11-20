@@ -1,0 +1,33 @@
+{
+ "palette": {
+  "A": [
+   64,
+   255,
+   64
+  ],
+  "B": [
+   255,
+   192,
+   32
+  ],
+  "C": [
+   64,
+   224,
+   192
+  ],
+  "K": [
+   0,
+   0,
+   0
+  ]
+ },
+ "rows": [
+  "AAAAAAAAAAAAAAAAAAAAAAA",
+  "BBBBBBBBBBBBBBBBBBBBBBB",
+  "CCCCCCCCCCCCCCCCCCCCCCC",
+  "CCCCCCCCCCCCCCCCCCCCCCC",
+  "BBBBBBBBBBBBBBBBBBBBBBB",
+  "AAAAAAAAAAAAAAAAAAAAAAA"
+ ],
+ "bg": "A"
+}

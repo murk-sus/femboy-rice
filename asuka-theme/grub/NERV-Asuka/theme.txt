@@ -1,0 +1,97 @@
+# NERV // Asuka GRUB theme (based on ArchChan-theme)
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "Terminus (TTF) Regular 16"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
++boot_menu {
+  left = 8%
+  width = 42%
+  top = 32%
+  height = 42%
+  item_font = "Rajdhani Regular 24"
+  item_color = "#ff9a5a"
+  selected_item_font = "Rajdhani Regular 24"
+  selected_item_color = "#ffffff"
+  icon_width = 24
+  icon_height = 24
+  item_height = 38
+  item_padding = 20
+  item_icon_space = 16
+  item_spacing = 6
+  menu_pixmap_style = "no_*.png"
+  selected_item_pixmap_style = "highlight_*.png"
+}
+
++ progress_bar {
+  left = 0%
+  top = 100%-30
+  width = 100%
+  height = 30
+  id = "__timeout__"
+  text = "@TIMEOUT_NOTIFICATION_LONG@"
+  font = "Rajdhani Regular 24"
+  text_color = "#ffffff"
+  fg_color = "#c81c26"
+  bg_color = "#1a0606"
+  highlight_style = "progress_*.png"
+}
+
++ label {
+  font = "Shippori Mincho B1 Regular 96"
+  left = 8%
+  top = 8%
+  width = 50%
+  color = "#dc2630"
+  text = "NERV"
+}
+
++ label {
+  font = "Oswald Regular 22"
+  left = 8%+4
+  top = 8%+118
+  width = 50%
+  color = "#ff6a13"
+  text = "MAGI SYSTEM // BOOT SEQUENCE // EVA-02 PILOT: ASUKA LANGLEY SORYU"
+}
+
++ label {
+  font = "Oswald Regular 22"
+  left = 8%+4
+  top = 8%+150
+  width = 50%
+  color = "#967064"
+  text = "GOD'S IN HIS HEAVEN. ALL'S RIGHT WITH THE WORLD."
+}
+
++ label {
+  font = "Rajdhani Regular 24"
+  left = 8%
+  top = 100%-136
+  width = 50%
+  color = "#ff6a13"
+  text = " UP/DOWN - SELECT UNIT"
+}
+
++ label {
+  font = "Rajdhani Regular 24"
+  left = 8%
+  top = 100%-112
+  width = 50%
+  color = "#ff6a13"
+  text = " ENTER - LAUNCH EVA"
+}
+
++ label {
+  font = "Rajdhani Regular 24"
+  left = 8%
+  top = 100%-86
+  width = 50%
+  color = "#967064"
+  text = " E - EDIT  //  C - COMMAND LINE"
+}

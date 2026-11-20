@@ -1,0 +1,45 @@
+{
+  "id": "forest",
+  "name": "Forest Spirit",
+  "description": "Лесной дух в зелёном убежище: мох, золото, витражи и тёплый свет.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyForest",
+  "cursor": "Femboy-Forest",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-forest",
+  "splash": "femboy.forest",
+  "konsole_profile": "Femboy Forest.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#9be36b",
+  "accent2": "#ffd36b",
+  "bg": "#0a120a",
+  "system": {
+    "sddm": "femboy-forest",
+    "grub": "Femboy-Forest",
+    "plymouth": "forest-log",
+    "refind": "femboy-forest",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/forest/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/forest/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/forest/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/forest/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/forest/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/forest/kickoff.png"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "protogen",
+  "name": "Protogen Lab",
+  "description": "Протоген-киберфурри: бирюзовый неон, визор с глазками, всё говорит «beep».",
+  "preview": "preview.png",
+  "colorscheme": "FemboyProtogen",
+  "cursor": "Femboy-Protogen",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-protogen",
+  "splash": "femboy.protogen",
+  "konsole_profile": "Femboy Protogen.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#4ff0ff",
+  "accent2": "#ff6fd8",
+  "bg": "#071016",
+  "system": {
+    "sddm": "femboy-protogen",
+    "grub": "Femboy-Protogen",
+    "plymouth": "protogen-log",
+    "refind": "femboy-protogen",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/protogen/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/protogen/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/protogen/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/protogen/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/protogen/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/protogen/kickoff.png"
+}

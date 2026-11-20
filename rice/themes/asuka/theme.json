@@ -1,0 +1,44 @@
+{
+  "id": "asuka",
+  "name": "NERV // Asuka",
+  "description": "Ева-02, NERV и MAGI: красный, оранжевый, живые обои с Аской, логи MAGI при загрузке.",
+  "preview": "preview.png",
+  "colorscheme": "NERVAsuka",
+  "cursor": "NERV-Asuka",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "nerv-asuka",
+  "splash": "nerv.asuka",
+  "konsole_profile": "NERV Asuka.profile",
+  "kitty": "~/.config/kitty/themes/nerv-asuka.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#dc2630",
+  "accent2": "#ff6a13",
+  "bg": "#0c0506",
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/asuka-theme/wallpapers/asuka_manga_1440p.mp4"
+    },
+    "side": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/asuka-theme/wallpapers/asuka_nerv_1080p.webm"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/asuka-theme/video/asuka_nerv.mp4",
+    "poster": "/home/femboychik/.local/share/asuka-theme/video/asuka_nerv.png"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/asuka-theme/img/kickoff_nerv.png",
+  "system": {
+    "sddm": "nerv-asuka",
+    "grub": "NERV-Asuka",
+    "plymouth": "asuka-log",
+    "refind": "nerv-asuka",
+    "avatar": "/home/femboychik/.local/share/asuka-theme/img/avatar.png"
+  }
+}

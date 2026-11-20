@@ -1,0 +1,45 @@
+{
+  "id": "spacebunny",
+  "name": "Space Bunny",
+  "description": "Космический зайка: тёмно-синий космос, Земля над горизонтом и тысяча кроликов.",
+  "preview": "preview.png",
+  "colorscheme": "FemboySpacebunny",
+  "cursor": "Femboy-Spacebunny",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-spacebunny",
+  "splash": "femboy.spacebunny",
+  "konsole_profile": "Femboy Spacebunny.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#a8c8ff",
+  "accent2": "#ff9ad5",
+  "bg": "#070a14",
+  "system": {
+    "sddm": "femboy-spacebunny",
+    "grub": "Femboy-Spacebunny",
+    "plymouth": "spacebunny-log",
+    "refind": "femboy-spacebunny",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/spacebunny/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/spacebunny/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/spacebunny/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/spacebunny/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/spacebunny/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/spacebunny/kickoff.png"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "samurai",
+  "name": "Samurai Cat",
+  "description": "Кот-самурай среди сакуры: багрянец, розовый, тушь и сталь.",
+  "preview": "preview.png",
+  "colorscheme": "FemboySamurai",
+  "cursor": "Femboy-Samurai",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-samurai",
+  "splash": "femboy.samurai",
+  "konsole_profile": "Femboy Samurai.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff4f6b",
+  "accent2": "#ffb3c8",
+  "bg": "#100808",
+  "system": {
+    "sddm": "femboy-samurai",
+    "grub": "Femboy-Samurai",
+    "plymouth": "samurai-log",
+    "refind": "femboy-samurai",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/samurai/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/samurai/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/samurai/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/samurai/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/samurai/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/samurai/kickoff.png"
+}

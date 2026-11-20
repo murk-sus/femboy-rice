@@ -1,0 +1,45 @@
+{
+  "id": "lightbulb",
+  "name": "Lightbulb Kitten",
+  "description": "Котик с лампочкой-солнцем: глубокий фиолетовый, тёплый жёлтый свет и тихая ночь.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyLightbulb",
+  "cursor": "Femboy-Lightbulb",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-lightbulb",
+  "splash": "femboy.lightbulb",
+  "konsole_profile": "Femboy Lightbulb.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ffd24f",
+  "accent2": "#9a7bff",
+  "bg": "#0d0820",
+  "system": {
+    "sddm": "femboy-lightbulb",
+    "grub": "Femboy-Lightbulb",
+    "plymouth": "lightbulb-log",
+    "refind": "femboy-lightbulb",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/lightbulb/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/lightbulb/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/lightbulb/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/lightbulb/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/lightbulb/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/lightbulb/kickoff.png"
+}

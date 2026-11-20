@@ -1,0 +1,1 @@
+{ "name": "rice-mood", "version": "0.1.0", "author": { "name": "femboychik" }, "description": "Claude Code в стиле активной темы райса: шапка, статус, звуки, характер, /rice", "types": "./types/index.d.ts" }

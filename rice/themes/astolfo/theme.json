@@ -1,0 +1,45 @@
+{
+  "id": "astolfo",
+  "name": "Pink Rider",
+  "description": "Розовый рыцарь-райдер: белое золото, розовый и чёрные банты, ноль стыда и много энергии.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyAstolfo",
+  "cursor": "Femboy-Astolfo",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-astolfo",
+  "splash": "femboy.astolfo",
+  "konsole_profile": "Femboy Astolfo.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff6fb1",
+  "accent2": "#ffd36b",
+  "bg": "#140a12",
+  "system": {
+    "sddm": "femboy-astolfo",
+    "grub": "Femboy-Astolfo",
+    "plymouth": "astolfo-log",
+    "refind": "femboy-astolfo",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/astolfo/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/astolfo/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/astolfo/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/astolfo/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/astolfo/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/astolfo/kickoff.png"
+}

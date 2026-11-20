@@ -1,0 +1,88 @@
+// Rei // 1995 — fastfetch (rice)
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/femboychik/.local/share/rice/themes/rei/fastfetch-logo.png",
+    "type": "kitty",
+    "height": 16,
+    "padding": {
+      "top": 1,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "94",
+      "title": "91"
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "{#1;91}▌綾波レイ{#0;94}  FIRST CHILD // UNIT-00 {#90}[TAPE 01 · SEP 1995]"
+    },
+    {
+      "type": "custom",
+      "format": "{#34}─────────────────────────────────────────"
+    },
+    {
+      "type": "custom",
+      "format": "{#94}PILOT     {#97}綾波レイ  {#90}(Ayanami Rei)"
+    },
+    {
+      "type": "custom",
+      "format": "{#94}UNIT      {#97}EVA-00 {#90}// Prototype"
+    },
+    {
+      "type": "title",
+      "key": "OPERATOR "
+    },
+    {
+      "type": "os",
+      "key": "OS       "
+    },
+    {
+      "type": "kernel",
+      "key": "KERNEL   "
+    },
+    {
+      "type": "packages",
+      "key": "PACKAGES "
+    },
+    {
+      "type": "shell",
+      "key": "SHELL    "
+    },
+    {
+      "type": "terminal",
+      "key": "TERMINAL "
+    },
+    {
+      "type": "wm",
+      "key": "WM       "
+    },
+    {
+      "type": "cpu",
+      "key": "UNIT-00  "
+    },
+    {
+      "type": "gpu",
+      "key": "AT FIELD "
+    },
+    {
+      "type": "memory",
+      "key": "LCL      "
+    },
+    {
+      "type": "uptime",
+      "key": "TAPE     "
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}

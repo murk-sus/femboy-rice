@@ -1,0 +1,45 @@
+{
+  "id": "cozylamp",
+  "name": "Cozy Lamp",
+  "description": "Ночная комната в тёплом свете лампы: янтарь, мёд и пледы, 3 часа ночи.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyCozylamp",
+  "cursor": "Femboy-Cozylamp",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-cozylamp",
+  "splash": "femboy.cozylamp",
+  "konsole_profile": "Femboy Cozylamp.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ffb347",
+  "accent2": "#ff8fb1",
+  "bg": "#120a06",
+  "system": {
+    "sddm": "femboy-cozylamp",
+    "grub": "Femboy-Cozylamp",
+    "plymouth": "cozylamp-log",
+    "refind": "femboy-cozylamp",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/cozylamp/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/cozylamp/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/cozylamp/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/cozylamp/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/cozylamp/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/cozylamp/kickoff.png"
+}

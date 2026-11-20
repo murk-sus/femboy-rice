@@ -1,0 +1,45 @@
+{
+  "id": "foxcottage",
+  "name": "Fox Cottage",
+  "description": "Лисёнок в уютном домике: тёплый оранжевый, зелень, свечи и чай.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyFoxcottage",
+  "cursor": "Femboy-Foxcottage",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-foxcottage",
+  "splash": "femboy.foxcottage",
+  "konsole_profile": "Femboy Foxcottage.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ffa04a",
+  "accent2": "#a8e07a",
+  "bg": "#140d08",
+  "system": {
+    "sddm": "femboy-foxcottage",
+    "grub": "Femboy-Foxcottage",
+    "plymouth": "foxcottage-log",
+    "refind": "femboy-foxcottage",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/foxcottage/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/foxcottage/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/foxcottage/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/foxcottage/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/foxcottage/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/foxcottage/kickoff.png"
+}

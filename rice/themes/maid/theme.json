@@ -1,0 +1,45 @@
+{
+  "id": "maid",
+  "name": "Catboy Maid",
+  "description": "Кот-горничный: чёрное, белое и розовый, рюши, «welcome home, master~» без пошлости.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyMaid",
+  "cursor": "Femboy-Maid",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-maid",
+  "splash": "femboy.maid",
+  "konsole_profile": "Femboy Maid.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff8fc7",
+  "accent2": "#ffffff",
+  "bg": "#120c12",
+  "system": {
+    "sddm": "femboy-maid",
+    "grub": "Femboy-Maid",
+    "plymouth": "maid-log",
+    "refind": "femboy-maid",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/maid/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/maid/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/maid/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/maid/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/maid/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/maid/kickoff.png"
+}

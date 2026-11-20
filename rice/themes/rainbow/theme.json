@@ -1,0 +1,45 @@
+{
+  "id": "rainbow",
+  "name": "Rainbow Chaos",
+  "description": "Психоделический радужный хаос: кислотные цвета, искры и полное отсутствие тормозов.",
+  "preview": "preview.png",
+  "colorscheme": "FemboyRainbow",
+  "cursor": "Femboy-Rainbow",
+  "cursor_size": 32,
+  "icons": "Papirus-Dark",
+  "sounds": "femboy-rainbow",
+  "splash": "femboy.rainbow",
+  "konsole_profile": "Femboy Rainbow.profile",
+  "kitty": "out/kitty.conf",
+  "prompt_bash": "prompt.bash",
+  "prompt_fish": "prompt.fish",
+  "fastfetch": "fastfetch.jsonc",
+  "rgb": "rgb.json",
+  "accent": "#ff4f9a",
+  "accent2": "#4fd8ff",
+  "bg": "#0e0814",
+  "system": {
+    "sddm": "femboy-rainbow",
+    "grub": "Femboy-Rainbow",
+    "plymouth": "rainbow-log",
+    "refind": "femboy-rainbow",
+    "avatar": "system/avatar.png"
+  },
+  "wallpapers": {
+    "main": {
+      "type": "video",
+      "path": "/home/femboychik/.local/share/rice/themes/rainbow/wallpapers/main-live.mp4",
+      "poster": "/home/femboychik/.local/share/rice/themes/rainbow/wallpapers/main-poster.jpg"
+    },
+    "side": {
+      "type": "image",
+      "path": "/home/femboychik/.local/share/rice/themes/rainbow/wallpapers/side-1080p.png"
+    }
+  },
+  "lockscreen": {
+    "type": "video",
+    "path": "/home/femboychik/.local/share/rice/themes/rainbow/wallpapers/main-live.mp4",
+    "poster": "/home/femboychik/.local/share/rice/themes/rainbow/wallpapers/main-poster.jpg"
+  },
+  "kickoff_icon": "/home/femboychik/.local/share/rice/themes/rainbow/kickoff.png"
+}

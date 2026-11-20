@@ -1,0 +1,38 @@
+{
+ "palette": {
+  "B": [
+   40,
+   120,
+   255
+  ],
+  "I": [
+   120,
+   190,
+   255
+  ],
+  "R": [
+   255,
+   0,
+   10
+  ],
+  "W": [
+   200,
+   220,
+   255
+  ],
+  "K": [
+   0,
+   0,
+   20
+  ]
+ },
+ "rows": [
+  "IIIIIIIIIIIIIIIIIIIIIII",
+  "BBBBBBRRBBBBBBBRRBBBBBB",
+  "BBBBBBBBBBBBBBBBBBBBBBB",
+  "WWWWWWWWWWWWWWWWWWWWWWW",
+  "BBBBBBBBBBBBBBBBBBBBBBB",
+  "IIIIIIIIIIIIIIIIIIIIIII"
+ ],
+ "bg": "I"
+}

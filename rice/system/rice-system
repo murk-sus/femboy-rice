@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# rice-system <id> — системная часть темы: SDDM, аватар, GRUB, rEFInd, Plymouth.
+# Ставится root-owned в /usr/local/bin установщиком ~/rice-install-system.sh и вызывается через pkexec.
+# Читает только root-owned /usr/local/share/rice/themes/<id>/system.conf — пользовательские файлы как root не исполняются.
+set -uo pipefail
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+ok()   { echo "✓ $*"; }
+fail() { echo "✗ $*"; }
+
+[[ $EUID -eq 0 ]] || { echo "нужен root (запусти через pkexec)"; exit 1; }
+ID=${1:-}
+[[ $ID =~ ^[a-z0-9_-]+$ ]] || { echo "некорректный id темы"; exit 2; }
+D=/usr/local/share/rice/themes/$ID
+[[ -f $D/system.conf ]] || { echo "тема «$ID» не установлена в систему — выполни: sudo bash ~/rice-install-system.sh"; exit 3; }
+exec 9>/run/rice-system.lock
+flock -n 9 || { echo "уже выполняется другая смена темы"; exit 4; }
+
+SDDM=""; GRUB=""; PLYMOUTH=""; REFIND=""
+while IFS='=' read -r k v; do
+  case $k in SDDM|GRUB|PLYMOUTH|REFIND) [[ $v =~ ^[A-Za-z0-9._-]+$ ]] && printf -v "$k" '%s' "$v";; esac
+done < "$D/system.conf"
+U=$(id -nu "${PKEXEC_UID:-${SUDO_UID:-1000}}" 2>/dev/null || echo femboychik)
+BK=/var/backups/rice-system; mkdir -p "$BK"
+RC=0
+
+# ── SDDM ─────────────────────────────────────────────────────────────────────
+F=/etc/sddm.conf.d/kde_settings.conf
+if [[ -n $SDDM && -f /usr/share/sddm/themes/$SDDM/Main.qml ]]; then
+  cp -a "$F" "$BK/kde_settings.conf" 2>/dev/null
+  if [[ -f $F ]] && grep -q '^Current=' "$F"; then sed -i "s/^Current=.*/Current=$SDDM/" "$F"
+  else mkdir -p /etc/sddm.conf.d; printf '\n[Theme]\nCurrent=%s\n' "$SDDM" >> "$F"; fi
+  ok "SDDM (экран входа) → $SDDM"
+else fail "SDDM: тема «$SDDM» не найдена"; RC=1; fi
+
+# ── аватар ───────────────────────────────────────────────────────────────────
+if [[ -f $D/avatar.png ]]; then
+  mkdir -p /var/lib/AccountsService/icons /var/lib/AccountsService/users
+  install -m644 "$D/avatar.png" "/var/lib/AccountsService/icons/$U"
+  UF=/var/lib/AccountsService/users/$U
+  if [[ -f $UF ]] && grep -q '^\[User\]' "$UF"; then
+    grep -q '^Icon=' "$UF" && sed -i "s|^Icon=.*|Icon=/var/lib/AccountsService/icons/$U|" "$UF" \
+                           || sed -i "/^\[User\]/a Icon=/var/lib/AccountsService/icons/$U" "$UF"
+  else printf '[User]\nIcon=/var/lib/AccountsService/icons/%s\nSystemAccount=false\n' "$U" > "$UF"; fi
+  ok "аватар"
+fi
+
+# ── rEFInd ───────────────────────────────────────────────────────────────────
+R=/efi/EFI/refind/refind.conf
+if [[ -n $REFIND && -f $R ]]; then
+  if [[ -f /efi/EFI/refind/themes/$REFIND/theme.conf ]]; then
+    cp -a "$R" "$BK/refind.conf"
+    sed -i -E "s#themes/[A-Za-z0-9._-]+/#themes/$REFIND/#g" "$R"; sync
+    ok "rEFInd → $REFIND"
+  else fail "rEFInd: тема «$REFIND» не скопирована на ESP"; RC=1; fi
+fi
+
+# ── GRUB ─────────────────────────────────────────────────────────────────────
+if [[ -n $GRUB && -f /usr/share/grub/themes/$GRUB/theme.txt ]]; then
+  cp -a /etc/default/grub "$BK/grub.default"; cp -a /boot/grub/grub.cfg "$BK/grub.cfg"
+  if grep -q '^GRUB_THEME=' /etc/default/grub; then
+    sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"/usr/share/grub/themes/$GRUB/theme.txt\"|" /etc/default/grub
+  else echo "GRUB_THEME=\"/usr/share/grub/themes/$GRUB/theme.txt\"" >> /etc/default/grub; fi
+  NEW=/boot/grub/grub.cfg.rice-new
+  if grub-mkconfig -o "$NEW" > "$BK/grub-mkconfig.log" 2>&1 && grub-script-check "$NEW" \
+     && grep -q "themes/$GRUB/theme.txt" "$NEW" && grep -q 'vmlinuz-linux' "$NEW" \
+     && [[ $(grep -c '^menuentry\|^submenu' "$NEW") -ge $(grep -c '^menuentry\|^submenu' "$BK/grub.cfg") ]]; then
+    mv "$NEW" /boot/grub/grub.cfg; sync; ok "GRUB → $GRUB (grub.cfg проверен)"
+  else
+    rm -f "$NEW"; cp -a "$BK/grub.default" /etc/default/grub
+    fail "GRUB: проверка grub.cfg не прошла — ничего не изменено (лог $BK/grub-mkconfig.log)"; RC=1
+  fi
+else fail "GRUB: тема «$GRUB» не найдена"; RC=1; fi
+
+# ── Plymouth (последним: пересборка initramfs ~1 мин) ────────────────────────
+if [[ -n $PLYMOUTH && -f /usr/share/plymouth/themes/$PLYMOUTH/$PLYMOUTH.plymouth ]]; then
+  if [[ $(plymouth-set-default-theme) == "$PLYMOUTH" ]]; then ok "Plymouth уже $PLYMOUTH"
+  else
+    echo "… Plymouth → $PLYMOUTH, пересобираю initramfs (mkinitcpio -p linux)"
+    cp -a /etc/plymouth/plymouthd.conf "$BK/plymouthd.conf"
+    cp -a /boot/initramfs-linux.img /boot/initramfs-linux-fallback.img "$BK"/
+    if plymouth-set-default-theme "$PLYMOUTH" && mkinitcpio -p linux > "$BK/mkinitcpio.log" 2>&1 \
+       && [[ -s /boot/initramfs-linux.img && -s /boot/initramfs-linux-fallback.img ]] \
+       && lsinitcpio /boot/initramfs-linux.img | grep -q "plymouth/themes/$PLYMOUTH/$PLYMOUTH.script"; then
+      sync; ok "Plymouth → $PLYMOUTH (initramfs проверен)"
+    else
+      cp -a "$BK/plymouthd.conf" /etc/plymouth/plymouthd.conf
+      cp -a "$BK/initramfs-linux.img" "$BK/initramfs-linux-fallback.img" /boot/; sync
+      fail "Plymouth: ошибка — вернул прежний initramfs (лог $BK/mkinitcpio.log)"; RC=1
+    fi
+  fi
+else fail "Plymouth: тема «$PLYMOUTH» не найдена"; RC=1; fi
+
+echo "готово: системная часть «$ID». Перезагрузка не нужна сейчас — увидишь при следующем включении."
+exit $RC
